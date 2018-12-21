@@ -12,11 +12,21 @@
     <?php echo $sf_content ?>
     <?php if ($sf_user->isAuthenticated()): ?>
         <div id="menu">
+            <div class="dropdown">
+
             <ul>
                 <li><?php echo link_to('Articles', 'post') ?></li>
                 <li><?php echo link_to('Categories', 'category') ?></li>
-                <li><?php echo link_to('Users', 'sf_guard_user') ?></li>
             </ul>
+            </div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Users Management</button>
+            <div id="myDropdown" class="dropdown-content">
+                <?php echo link_to('Users', 'sf_guard_user') ?>
+                <?php echo link_to('Permissions', 'sf_guard_permission') ?>
+                <?php echo link_to('Groups', 'sf_guard_group') ?>
+            </div>
+        </div>
         </div>
     <h1>Welcome <?php echo sfContext::getInstance()->getUser()->getGuardUser()->getUsername()?></h1>
         <li><?php echo link_to('Logout', 'sf_guard_signout') ?> </li>
