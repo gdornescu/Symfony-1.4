@@ -1,0 +1,16 @@
+{
+  "name": "gdornescu/jobeet",
+  "authors": [
+    {
+      "name": "gdornescu",
+      "email": "gdornescu@pentalog.com"
+    }
+  ],
+  "require": {
+    "propel/propel1": "~1.6",
+    "doctrine/orm": "^2.6.2",
+    "lexpress/sf-doctrine-guard-plugin": "^1.5",
+    "pear/pear": "^1.10",
+    "zendframework/zendframework": "^3.0"
+  }
+}

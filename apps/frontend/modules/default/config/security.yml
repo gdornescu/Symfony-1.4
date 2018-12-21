@@ -1,0 +1,5 @@
+new:
+  is_secure: true
+
+default:
+  is_secure: false

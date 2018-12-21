@@ -1,0 +1,17 @@
+Post:
+  actAs:
+    Timestampable: ~
+  columns:
+    category_id:  { type: integer, notnull: true }
+    user_id:
+      type: integer
+      notnull: true
+    title: string(255)
+    body:  clob
+    image:         { type: string(255) }
+  options:
+    form: true
+    filter: true
+  relations:
+    Category: { onDelete: CASCADE, local: category_id, foreign: id, foreignAlias: Articles }
+    sfGuardUser: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: Users }

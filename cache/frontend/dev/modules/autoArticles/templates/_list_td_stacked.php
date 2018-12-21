@@ -1,0 +1,3 @@
+<td colspan="8">
+  <?php echo __('%%id%% - %%category_id%% - %%user_id%% - %%title%% - %%body%% - %%image%% - %%created_at%% - %%updated_at%%', array('%%id%%' => link_to($post->getId(), 'post_edit', $post), '%%category_id%%' => $post->getCategoryId(), '%%user_id%%' => $post->getUserId(), '%%title%%' => $post->getTitle(), '%%body%%' => $post->getBody(), '%%image%%' => $post->getImage(), '%%created_at%%' => false !== strtotime($post->getCreatedAt()) ? format_date($post->getCreatedAt(), "f") : '&nbsp;', '%%updated_at%%' => false !== strtotime($post->getUpdatedAt()) ? format_date($post->getUpdatedAt(), "f") : '&nbsp;'), 'messages') ?>
+</td>

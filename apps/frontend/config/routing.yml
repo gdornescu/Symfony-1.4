@@ -1,0 +1,96 @@
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+post:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Post
+    module:               articles
+    prefix_path:          /articles
+    column:               id
+    with_wildcard_routes: true
+
+
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: homepage }
+
+search:
+  url: /search
+  param: { module: default, action: search }
+
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+
+#default:
+#  url:   /:module/:action/*
+
+article:
+  url:     /article.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: list }
+  param:   { module: default, action: index, sf_format: html }
+  requirements: { sf_method: get }
+
+article_new:
+  url:     /article/new.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: new, sf_format: html }
+  requirements: { sf_method: get }
+
+article_create:
+  url:     /article.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: create, sf_format: html }
+  requirements: { sf_method: post }
+
+article_edit:
+  url:     /article/:id/edit.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: edit, sf_format: html }
+  requirements: { sf_method: get }
+
+article_update:
+  url:     /article/:id.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: update, sf_format: html }
+  requirements: { sf_method: put }
+
+article_delete:
+  url:     /article/:id.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: delete, sf_format: html }
+  requirements: { sf_method: delete }
+
+article_show:
+  url:     /article/:id.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Post, type: object }
+  param:   { module: default, action: show, sf_format: html }
+  requirements: { sf_method: get }
+
+
+
+
+
+
